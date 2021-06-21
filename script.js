@@ -26,11 +26,13 @@ function generatePassword() {
   // Asks user for amount of characters
   passwordLength = parseInt(prompt("How many characters would you like your password? Choose between 8 - 128"));
   if (!passwordLength) {
-    alert("You need to pick a value");
-  } else if (isNaN(passwordLength)) {
     alert("You need to pick a number");
+    return;
+
   } else if (passwordLength < 8 || passwordLength > 128) {
     passwordLength = parseInt(prompt("You must choose between 8 - 128"));
+    
+
   // Asks for types of characters after amount is verified
   } else {
     confirmUpper = confirm("Would you like to include uppercase characters?");
